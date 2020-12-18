@@ -7,9 +7,13 @@ ws = wb[wb.sheetnames[0]]
 data = np.array([[i.value for i in j[0:5]] for j in ws.rows])
 del ws, wb
 
+plt.rcParams['font.size'] = '8'
+plt.rcParams['font.family'] = 'Times New Roman'
 fig, ax = plt.subplots(1, 4)
-axis0 = data.shape[0]
-axis1 = data.shape[1]
-print(data[0, 4])
+names = data[0, :]
+
 for i in range(data.shape[1]-1):
-  ax[i-1].plot(data[1:, 0], data[1:, i])
+  ax[i].plot(data[1:, 0].astype('float64'), data[1:, i+1].astype('float64'))
+  ax[i].set_title(names[i+1])
+
+fig.savefig('results/plots.png')

@@ -7,7 +7,7 @@ from pandas.plotting import table
 plt.rcParams['font.size'] = '8'
 plt.rcParams['font.family'] = 'Times New Roman'
 
-names = glob('D:/GitHub/sensors_measurements_projects/statistical_analysis/data/*.*')
+names = glob('/SMS_statistical_analysis/data/*.*')
 
 datasets = ['No filter', 'time step 1', 'time step 10', 'time step 100']
 requiredData = ['Standard Deviation', 'Median', '25th Percentile', '75th Percentile', 'Minimum Value', 'Maximum Value']

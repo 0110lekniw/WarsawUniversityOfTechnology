@@ -49,7 +49,7 @@ for i in range(len(names)):
   outliers[1] = array[outliersPosition, :]
 
   array = np.delete(array, outliersPosition, 0)
-  ax.hist(array[:, 0], density=True, alpha=0.75)
+  ax.hist(array[:, 0], bins=20, alpha=0.75, histtype='barstacked')
 
   headings[datasets[i]] = array[:, 0].astype('float64')
 
